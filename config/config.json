@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "dee",
+    "password": null,
+    "database": "arcade2_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "dee",
+    "password": null,
+    "database": "arcade2_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "dee",
+    "password": null,
+    "database": "arcade2_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
