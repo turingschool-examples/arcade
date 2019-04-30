@@ -3,7 +3,7 @@ var router = express.Router();
 var Game = require('../../../models').Game;
 
 /* GET all games */
-router.get("/", function (req, res, next) {
+router.get("/", function (req, res) {
   Game.findAll()
     .then(games => {
       res.setHeader("Content-Type", "application/json");
@@ -16,7 +16,7 @@ router.get("/", function (req, res, next) {
 });
 
 /* GET single game */
-router.get("/:id", function (req, res, next) {
+router.get("/:id", function (req, res) {
   Game.findAll({
     where: {
       id: req.params.id
@@ -33,7 +33,7 @@ router.get("/:id", function (req, res, next) {
 });
 
 /*POST new game*/
-router.post("/", function (req, res, next) {
+router.post("/", function (req, res) {
   Game.create({
     title: req.body.title,
     price: req.body.price,
@@ -52,7 +52,7 @@ router.post("/", function (req, res, next) {
 
 
 /* DELETE a single game */
-router.delete("/:id", function (req, res, next) {
+router.delete("/:id", function (req, res) {
   Game.destroy({
     where: {
       id: req.params.id
@@ -69,7 +69,7 @@ router.delete("/:id", function (req, res, next) {
 });
 
 /* UPDATE a single resource */
-router.put("/:id", function (req, res, next) {
+router.put("/:id", function (req, res) {
   Game.update(
     {
       title: req.body.title,
