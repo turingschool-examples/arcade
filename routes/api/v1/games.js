@@ -60,7 +60,7 @@ router.delete("/:id", function (req, res) {
   })
     .then(game => {
       res.setHeader("Content-Type", "application/json");
-      res.status(204);
+      res.status(204).send();
     })
     .catch(error => {
       res.setHeader("Content-Type", "application/json");
