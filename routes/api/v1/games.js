@@ -39,7 +39,7 @@ router.post("/", function (req, res) {
     price: req.body.price,
     releaseYear: req.body.releaseYear,
     active: req.body.active,
-    storeId: req.body.storeId
+    StoreId: req.body.StoreId
   })
     .then(game => {
       res.setHeader("Content-Type", "application/json");
@@ -59,9 +59,8 @@ router.delete("/:id", function (req, res) {
       id: req.params.id
     }
   })
-    .then(game => {
-      res.setHeader("Content-Type", "application/json");
-      res.status(204);
+    .then(() => {
+      res.status(204).send();
     })
     .catch(error => {
       res.setHeader("Content-Type", "application/json");
@@ -76,7 +75,8 @@ router.put("/:id", function (req, res) {
       title: req.body.title,
       price: req.body.price,
       releaseYear: req.body.releaseYear,
-      active: req.body.active
+      active: req.body.active,
+      StoreId: req.body.StoreId
     },
     {
       returning: true,
