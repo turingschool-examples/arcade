@@ -38,7 +38,8 @@ router.post("/", function (req, res) {
     title: req.body.title,
     price: req.body.price,
     releaseYear: req.body.releaseYear,
-    active: req.body.active
+    active: req.body.active,
+    storeId: req.body.storeId
   })
     .then(game => {
       res.setHeader("Content-Type", "application/json");
