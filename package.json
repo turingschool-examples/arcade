@@ -18,6 +18,9 @@
   },
   "devDependencies": {
     "babel-jest": "^24.7.1",
+    "chai": "^4.2.0",
+    "sequelize-test-helpers": "^1.1.0",
+    "sinon": "^7.3.2",
     "supertest": "^4.0.2"
   }
 }

@@ -1,14 +1,18 @@
 var shell = require('shelljs');
 var request = require("supertest");
-var app = require('./app');
+var app = require('../app');
 
 describe('api', () => {
+  beforeAll(() => {
+    shell.exec('npx sequelize db:create')
+  });
   beforeEach(() => {
-      shell.exec('npx sequelize db:migrate:undo:all')
-      shell.exec('npx sequelize db:create')
       shell.exec('npx sequelize db:migrate')
       shell.exec('npx sequelize db:seed:all')
-    })
+    });
+  afterEach(() => {
+    shell.exec('npx sequelize db:migrate:undo:all')
+  });
 
   describe('Test the root path', () => {
     test('should return a 200', () => {
